@@ -6,7 +6,7 @@ export default class extends React.Component {
     constructor(props) {
         super(props);
 
-        this.directLine = new DirectLine({ token: 'ApNGJLIONLM.gAfF-Thaf5rnU6IO9AQLGl5guicQWRfOE6L5aJe7lYY' });
+        this.directLine = new DirectLine({ token: '' });
     }
 
     render() {
