@@ -1,6 +1,6 @@
 import React from 'react';
 import Parallax from 'react-springy-parallax';
-import EtapaDesafio from './EtapaDesafio'
+import Step from './Step'
 
 
 
@@ -84,7 +84,7 @@ export default class extends React.Component {
                         offset={0} speed={0.5}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
-                        <div class="main-content">
+                        <div className="main-content">
                             <div className="item"
                              style={{
                                 height: '250px'
@@ -125,7 +125,7 @@ export default class extends React.Component {
                     <Parallax.Layer
                         offset={1} speed={0}
                         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <EtapaDesafio onFinish={() => this.parallax.scrollTo(2)} />
+                        <Step onFinish={() => this.parallax.scrollTo(2)} />
                     </Parallax.Layer>
 
                     {/*Andar 2*/}
@@ -133,7 +133,7 @@ export default class extends React.Component {
                         offset={2} speed={0}
                         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
-                        <EtapaDesafio onFinish={() => this.parallax.scrollTo(3)} />
+                        <Step onFinish={() => this.parallax.scrollTo(3)} />
 
                     </Parallax.Layer>
 
@@ -143,7 +143,7 @@ export default class extends React.Component {
                         onClick={() => this.parallax.scrollTo(4)}
                         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
-                        <EtapaDesafio onFinish={() => this.parallax.scrollTo(4)} />
+                        <Step onFinish={() => this.parallax.scrollTo(4)} />
 
                     </Parallax.Layer>
 

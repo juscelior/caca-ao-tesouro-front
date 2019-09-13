@@ -9,7 +9,7 @@ export default class extends React.Component {
     super(props)
     this.state = {
       delay: 100,
-      result: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+      result: null,
       pass:0
     }
  
@@ -51,7 +51,7 @@ export default class extends React.Component {
     }
  
     return(
-      <div>
+      <div className="main-content">
           {this.state.pass === 0 &&
             <div className='qr-code'>
               <QrReader
@@ -61,13 +61,17 @@ export default class extends React.Component {
                 onError={this.handleError}
                 onScan={this.handleScan}
                 legacyMode={true}
-                maxImageSize={0}
+                className="qrcode"
                 facingMode={'rear'} />
-              </div>
+            </div>
           }
           
           {this.state.pass === 0 &&
-            <input type="button" value="Submit QR Code" onClick={this.openImageDialog} />
+            <div className="item button-hand">
+              <button onClick={this.openImageDialog}>QR Code
+                <div className="hands"></div>
+              </button>            
+            </div>
           }      
               
           {this.state.pass === 1 &&
@@ -90,7 +94,16 @@ export default class extends React.Component {
           }
 
           {this.state.pass === 2 &&
-            <input type="button" value="Ir para proximo andar" onClick={this.nextStep} />
+            <div className="item button-parrot" >
+              <button onClick={this.nextStep}>Próximo
+                <div className="parrot"></div>
+                <div className="parrot"></div>
+                <div className="parrot"></div>
+                <div className="parrot"></div>
+                <div className="parrot"></div>
+                <div className="parrot"></div>
+              </button>
+            </div>
           }
       </div>
     )
