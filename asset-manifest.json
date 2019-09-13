@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/caca-ao-tesouro-front/static/css/main.8122290a.chunk.css",
-    "main.js": "/caca-ao-tesouro-front/static/js/main.ff4eb89c.chunk.js",
-    "main.js.map": "/caca-ao-tesouro-front/static/js/main.ff4eb89c.chunk.js.map",
+    "main.js": "/caca-ao-tesouro-front/static/js/main.1405b9a3.chunk.js",
+    "main.js.map": "/caca-ao-tesouro-front/static/js/main.1405b9a3.chunk.js.map",
     "runtime~main.js": "/caca-ao-tesouro-front/static/js/runtime~main.a4f4bedf.js",
     "runtime~main.js.map": "/caca-ao-tesouro-front/static/js/runtime~main.a4f4bedf.js.map",
     "static/js/2.112dbff9.chunk.js": "/caca-ao-tesouro-front/static/js/2.112dbff9.chunk.js",
     "static/js/2.112dbff9.chunk.js.map": "/caca-ao-tesouro-front/static/js/2.112dbff9.chunk.js.map",
     "index.html": "/caca-ao-tesouro-front/index.html",
-    "precache-manifest.d4306584586488aae90db8461287ce03.js": "/caca-ao-tesouro-front/precache-manifest.d4306584586488aae90db8461287ce03.js",
+    "precache-manifest.748a94fa1ff998b585fc6b4c36b845a2.js": "/caca-ao-tesouro-front/precache-manifest.748a94fa1ff998b585fc6b4c36b845a2.js",
     "service-worker.js": "/caca-ao-tesouro-front/service-worker.js",
     "static/css/main.8122290a.chunk.css.map": "/caca-ao-tesouro-front/static/css/main.8122290a.chunk.css.map"
   }
