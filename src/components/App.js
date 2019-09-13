@@ -1,6 +1,10 @@
 import React from 'react';
 import Parallax from 'react-springy-parallax';
 import Webchat from './Webchat';
+import EtapaDesafio from './EtapaDesafio'
+
+
+
 
 
 // Little helpers ...
@@ -18,17 +22,18 @@ export default class extends React.Component {
             <div>
             <Parallax
                 ref={ref => this.parallax = ref}
-                pages={4}
+                pages={5}
                 scrolling={false}>
-
-                <Parallax.Layer offset={1} speed={1} style={{ backgroundColor: '#243B4A' }} />
-                <Parallax.Layer offset={2} speed={1} style={{ backgroundColor: '#805E73' }} />
-                <Parallax.Layer offset={3} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
                 <Parallax.Layer
                     offset={0} speed={0} factor={4}
                     style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }}
                 />
+
+                <Parallax.Layer offset={1} speed={1} style={{ backgroundColor: '#243B4A' }} />
+                <Parallax.Layer offset={2} speed={1} style={{ backgroundColor: '#243B4A' }} />
+                <Parallax.Layer offset={3} speed={1} style={{ backgroundColor: '#805E73' }} />
+                <Parallax.Layer offset={4} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
                 <Parallax.Layer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
                     <img alt="" src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
@@ -75,6 +80,7 @@ export default class extends React.Component {
                     }}
                 />
 
+                {/*Introdução*/}
                 <Parallax.Layer
                     offset={0} speed={0.5}
                     style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
@@ -87,7 +93,7 @@ export default class extends React.Component {
                             lineHeight: '10px',
                             color: 'white'
                         }}>
-                        <p><Gray> &gt;</Gray>  npm install awv3-node --save</p>
+                        <p><Gray> &gt;</Gray>  npm install wiz-bpo --save</p>
                         <br />
                         <p><Gray> 1</Gray>  <Pink>const</Pink> Server <Pink>=</Pink> <Lightblue>require</Lightblue><Gray>(</Gray><Green>'awv3-node/server'</Green><Gray>)</Gray></p>
                         <br />
@@ -102,34 +108,37 @@ export default class extends React.Component {
                     </div>
                 </Parallax.Layer>
 
+                {/*Andar 1*/}
                 <Parallax.Layer
                     offset={1} speed={0}
-                    onClick={() => this.parallax.scrollTo(2)}
                     style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img alt=""
-                        src={url('server')}
-                        style={{ width: '20%', transform: [{ scale: this.animation }] }}
-                    />
+                    <EtapaDesafio onFinish={() => this.parallax.scrollTo(2)} />
                 </Parallax.Layer>
 
+                {/*Andar 2*/}
                 <Parallax.Layer
                     offset={2} speed={0}
-                    onClick={() => this.parallax.scrollTo(3)}
                     style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img alt=""
-                        src={url('bash')}
-                        style={{ width: '40%', transform: [{ scale: this.animation }] }}
-                    />
+                    
+                    <EtapaDesafio onFinish={() => this.parallax.scrollTo(3)} />
+
                 </Parallax.Layer>
 
+                {/*Andar 3*/}
                 <Parallax.Layer
-                    offset={3} speed={-0}
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                    onClick={() => this.parallax.scrollTo(0)}>
-                    <img alt=""
-                        src={url('clients-main')}
-                        style={{ width: '40%', transform: [{ scale: this.animation }] }}
-                    />
+                    offset={3} speed={0}
+                    onClick={() => this.parallax.scrollTo(4)}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        
+                    <EtapaDesafio onFinish={() => this.parallax.scrollTo(4)} />
+
+                </Parallax.Layer>
+
+                {/*Andar 4*/}
+                <Parallax.Layer
+                    offset={4} speed={-0}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+
                 </Parallax.Layer>
             </Parallax>
             <Webchat />
