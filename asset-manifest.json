@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/caca-ao-tesouro-front/static/css/main.3b248e0f.chunk.css",
-    "main.js": "/caca-ao-tesouro-front/static/js/main.b87f3dc7.chunk.js",
-    "main.js.map": "/caca-ao-tesouro-front/static/js/main.b87f3dc7.chunk.js.map",
+    "main.css": "/caca-ao-tesouro-front/static/css/main.8122290a.chunk.css",
+    "main.js": "/caca-ao-tesouro-front/static/js/main.ff4eb89c.chunk.js",
+    "main.js.map": "/caca-ao-tesouro-front/static/js/main.ff4eb89c.chunk.js.map",
     "runtime~main.js": "/caca-ao-tesouro-front/static/js/runtime~main.a4f4bedf.js",
     "runtime~main.js.map": "/caca-ao-tesouro-front/static/js/runtime~main.a4f4bedf.js.map",
-    "static/js/2.0c34f9fc.chunk.js": "/caca-ao-tesouro-front/static/js/2.0c34f9fc.chunk.js",
-    "static/js/2.0c34f9fc.chunk.js.map": "/caca-ao-tesouro-front/static/js/2.0c34f9fc.chunk.js.map",
+    "static/js/2.112dbff9.chunk.js": "/caca-ao-tesouro-front/static/js/2.112dbff9.chunk.js",
+    "static/js/2.112dbff9.chunk.js.map": "/caca-ao-tesouro-front/static/js/2.112dbff9.chunk.js.map",
     "index.html": "/caca-ao-tesouro-front/index.html",
-    "precache-manifest.0b2d6cf202ae2f10cf391ff996e6b7a5.js": "/caca-ao-tesouro-front/precache-manifest.0b2d6cf202ae2f10cf391ff996e6b7a5.js",
+    "precache-manifest.d4306584586488aae90db8461287ce03.js": "/caca-ao-tesouro-front/precache-manifest.d4306584586488aae90db8461287ce03.js",
     "service-worker.js": "/caca-ao-tesouro-front/service-worker.js",
-    "static/css/main.3b248e0f.chunk.css.map": "/caca-ao-tesouro-front/static/css/main.3b248e0f.chunk.css.map"
+    "static/css/main.8122290a.chunk.css.map": "/caca-ao-tesouro-front/static/css/main.8122290a.chunk.css.map"
   }
 }
