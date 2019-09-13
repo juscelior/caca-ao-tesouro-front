@@ -89,7 +89,7 @@ export default class extends React.Component {
                              style={{
                                 height: '250px'
                             }}>
-                                <img src='/assets/Wiz_BPO_negativa.png' alt='Wiz BPO' style={{
+                                <img src='assets/Wiz_BPO_negativa.png' alt='Wiz BPO' style={{
                                     height: '100%'
                                 }} />
                             </div>

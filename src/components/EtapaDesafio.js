@@ -9,14 +9,14 @@ export default class extends React.Component {
     super(props)
     this.state = {
       delay: 100,
-      result: null,
+      result: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
       pass:0
     }
  
     this.handleScan = this.handleScan.bind(this)
     this.openImageDialog = this.openImageDialog.bind(this)
-    this.finishVideo = this.finishVideo.bind(this)
-    this.next = this.next.bind(this)
+    this.onVideoFinish = this.onVideoFinish.bind(this)
+    this.nextStep = this.nextStep.bind(this)
 
   }
   handleScan(data){
@@ -27,16 +27,16 @@ export default class extends React.Component {
   }
 
   openImageDialog() {
-    this.refs.qrReader1.openImageDialog()
+    this.refs.qrcode.openImageDialog()
   }
 
-  finishVideo() {
+  onVideoFinish() {
     this.setState({
         pass:2
       })
   }
 
-  next(){
+  nextStep(){
     this.props.onFinish();
   }
 
@@ -53,14 +53,17 @@ export default class extends React.Component {
     return(
       <div>
           {this.state.pass === 0 &&
-            <QrReader
-            ref="qrReader1"
-            delay={this.state.delay}
-            style={previewStyle}
-            onError={this.handleError}
-            onScan={this.handleScan}
-            legacyMode={true}
-            facingMode={'rear'} />
+            <div className='qr-code'>
+              <QrReader
+                ref="qrcode"
+                delay={this.state.delay}
+                style={previewStyle}
+                onError={this.handleError}
+                onScan={this.handleScan}
+                legacyMode={true}
+                maxImageSize={0}
+                facingMode={'rear'} />
+              </div>
           }
           
           {this.state.pass === 0 &&
@@ -73,7 +76,7 @@ export default class extends React.Component {
                   url={this.state.result}
                   width='100%'
                   height='100%'
-                  onEnded={this.finishVideo} />
+                  onEnded={this.onVideoFinish} />
           }
 
           {this.state.pass === 1 &&
@@ -87,7 +90,7 @@ export default class extends React.Component {
           }
 
           {this.state.pass === 2 &&
-            <input type="button" value="Ir para proximo andar" onClick={this.next} />
+            <input type="button" value="Ir para proximo andar" onClick={this.nextStep} />
           }
       </div>
     )
