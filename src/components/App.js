@@ -65,7 +65,7 @@ export default class extends React.Component {
                     </Parallax.Layer>
 
                     <Parallax.Layer
-                        offset={3.5} speed={-0.4}
+                        offset={4.5} speed={-0.4}
                         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
                         <img alt="" src={url('earth')} style={{ width: '60%' }} />
                     </Parallax.Layer>
@@ -86,9 +86,9 @@ export default class extends React.Component {
 
                         <div className="main-content">
                             <div className="item"
-                             style={{
-                                height: '250px'
-                            }}>
+                                style={{
+                                    height: '250px'
+                                }}>
                                 <img src='assets/Wiz_BPO_negativa.png' alt='Wiz BPO' style={{
                                     height: '100%'
                                 }} />
@@ -121,19 +121,28 @@ export default class extends React.Component {
                         </div>
                     </Parallax.Layer>
 
+                    {/*Percurso 1
+                        A – B – C – D – E
+
+                        Percurso 2
+                        D – E – A – B – C 
+
+                        Percurso 3
+                        C – A – B – E – D
+                        */}
                     {/*Andar 1*/}
                     <Parallax.Layer
                         offset={1} speed={0}
-                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Step onFinish={() => this.parallax.scrollTo(2)} />
+                        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                        <Step id="stp-1" onFinish={() => this.parallax.scrollTo(2)} />
                     </Parallax.Layer>
 
                     {/*Andar 2*/}
                     <Parallax.Layer
                         offset={2} speed={0}
-                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
-                        <Step onFinish={() => this.parallax.scrollTo(3)} />
+                        <Step id="stp-2" onFinish={() => this.parallax.scrollTo(3)} />
 
                     </Parallax.Layer>
 
@@ -141,16 +150,16 @@ export default class extends React.Component {
                     <Parallax.Layer
                         offset={3} speed={0}
                         onClick={() => this.parallax.scrollTo(4)}
-                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
-                        <Step onFinish={() => this.parallax.scrollTo(4)} />
+                        <Step id="stp-3" onFinish={() => this.parallax.scrollTo(4)} />
 
                     </Parallax.Layer>
 
                     {/*Andar 4*/}
                     <Parallax.Layer
                         offset={4} speed={-0}
-                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
                     </Parallax.Layer>
                 </Parallax>
