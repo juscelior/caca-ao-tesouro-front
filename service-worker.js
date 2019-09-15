@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/caca-ao-tesouro-front/precache-manifest.601344e8382e9102cffbe3dc5720f27b.js"
+  "/caca-ao-tesouro-front/precache-manifest.3e6f3f499316a86b3c38593b88039531.js"
 );
 
 self.addEventListener('message', (event) => {
