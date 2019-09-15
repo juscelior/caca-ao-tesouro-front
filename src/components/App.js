@@ -1,5 +1,6 @@
 import React from 'react';
 import Parallax from 'react-springy-parallax';
+import Coverflow from 'react-coverflow';
 import Step from './Step'
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}assets/${name}.svg${wrap ? ')' : ''}`
@@ -11,27 +12,45 @@ const Blue = ({ children }) => <span style={{ color: '#57C7FF' }}>{children}</sp
 const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
 
 export default class extends React.Component {
-    constructor(props){
-    super(props)
+    constructor(props) {
+        super(props)
 
-    let steps = [
-        {id:'5andarsul', url:'https://www.youtube.com/watch?v=EN37lf2XrFQ&feature=youtu.be', label:'5º andar ala sul'},
-        {id:'12andarsul', url:'https://www.youtube.com/watch?v=cjPlLM6UOY4&feature=youtu.be', label:'12º andar ala sul'},
-        {id:'12andarnorte', url:'https://www.youtube.com/watch?v=D27944kmN_Y&feature=youtu.be', label:'12º andar ala norte'},
-        {id:'16andarsul', url:'https://www.youtube.com/watch?v=BpF7XWTKMGI&feature=youtu.be', label:'16º andar ala sul'},
-        {id:'16andarnorte', url:'https://www.youtube.com/watch?v=WwCnJsSnnRo&feature=youtu.be', label:'16º andar ala norte'},
-    ]
+        let steps = [
+            { id: '5andarsul', url: 'https://www.youtube.com/watch?v=EN37lf2XrFQ&feature=youtu.be', label: '5º andar ala sul' },
+            { id: '12andarsul', url: 'https://www.youtube.com/watch?v=cjPlLM6UOY4&feature=youtu.be', label: '12º andar ala sul' },
+            { id: '12andarnorte', url: 'https://www.youtube.com/watch?v=D27944kmN_Y&feature=youtu.be', label: '12º andar ala norte' },
+            { id: '16andarsul', url: 'https://www.youtube.com/watch?v=BpF7XWTKMGI&feature=youtu.be', label: '16º andar ala sul' },
+            { id: '16andarnorte', url: 'https://www.youtube.com/watch?v=WwCnJsSnnRo&feature=youtu.be', label: '16º andar ala norte' },
+        ]
 
-    let route = [
-        {id:'1', steps: ['5andarsul', '12andarsul','12andarnorte','16andarsul','16andarnorte']},
-        {id:'2', steps: ['16andarsul', '16andarnorte','5andarsul','12andarsul','12andarnorte']},
-        {id:'3', steps: ['12andarnorte', '5andarsul','12andarsul','16andarnorte','16andarsul']},
-    ]
+        let route = [
+            { id: '1', steps: ['5andarsul', '12andarsul', '12andarnorte', '16andarsul', '16andarnorte'] },
+            { id: '2', steps: ['16andarsul', '16andarnorte', '5andarsul', '12andarsul', '12andarnorte'] },
+            { id: '3', steps: ['12andarnorte', '5andarsul', '12andarsul', '16andarnorte', '16andarsul'] },
+        ]
 
-    this.state = {
-      steps,
-      route
+        let equip = '0'
+        this.state = {
+            steps,
+            route,
+            equip
+        }
+
+        this.setEquip = this.setEquip.bind(this)
+        this.getStep = this.getStep.bind(this)
     }
+
+    setEquip(idx) {
+        this.setState({ equip: idx });
+    }
+
+    getStep(idx) {
+        let route = this.state.route.find(x => x.id === this.state.equip)
+
+        if (route) {
+            let step = this.state.steps.find(x => x.id === route.steps[idx]);
+            return step;
+        }
     }
 
     render() {
@@ -145,7 +164,32 @@ export default class extends React.Component {
                     <Parallax.Layer
                         offset={1} speed={0}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                        <Step id="stp-1" onFinish={() => this.parallax.scrollTo(2)} dest={'5º andar ala sul'} />
+                        <div className="main-content">
+                            <div className="item" style={{
+                                whiteSpace: 'pre',
+                                fontFamily: 'Menlo-Regular, Menlo, monospace',
+                                fontSize: 20,
+                                lineHeight: '20px',
+                                color: 'white'
+                            }}>>
+                                <Coverflow
+                                    width={480}
+                                    height={480}
+                                    displayQuantityOfSide={2}
+                                    currentFigureScale={1.2}
+                                    navigation={false}
+                                    enableHeading={true}
+                                    active={0}
+                                >
+                                    <img src={url('backpack')} alt='Time 1' onClick={() => this.setEquip('1')} />
+                                    <img src={url('backpack_1')} alt='Time 2' onClick={() => this.setEquip('2')} />
+                                    <img src={url('backpack_2')} alt='Time 3' onClick={() => this.setEquip('3')} />
+                                </Coverflow>
+                            </div>
+                            <div className="item button-jittery" >
+                                {this.state.equip !== '0' && <button onClick={() => this.parallax.scrollTo(2)}>Time {this.state.equip}, começar!</button>}
+                            </div>
+                        </div>
                     </Parallax.Layer>
                     {/*Percurso 1
                         A – B – C – D – E 
@@ -156,11 +200,11 @@ export default class extends React.Component {
                         Percurso 3
                         C – A – B – E – D
                         */}
-                    {/*Andar 1*/}
+                    {/*Times*/}
                     <Parallax.Layer
                         offset={2} speed={0}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                        <Step id="stp-1" onFinish={() => this.parallax.scrollTo(3)} dest={'5º andar ala sul'} />
+                        {this.state.equip !== '0' && <Step id="stp-1" equip={this.state.equip} onFinish={() => this.parallax.scrollTo(3)} dest={(equip) => this.getStep('0')} />}
                     </Parallax.Layer>
 
                     {/*Andar 2*/}
@@ -168,7 +212,7 @@ export default class extends React.Component {
                         offset={3} speed={0}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
-                        <Step id="stp-2" onFinish={() => this.parallax.scrollTo(4)} />
+                        {this.state.equip !== '0' && <Step id="stp-2" equip={this.state.equip} onFinish={() => this.parallax.scrollTo(4)} dest={(equip) => this.getStep('1')} />}
 
                     </Parallax.Layer>
 
@@ -178,17 +222,17 @@ export default class extends React.Component {
                         onClick={() => this.parallax.scrollTo(4)}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
-                        <Step id="stp-3" onFinish={() => this.parallax.scrollTo(5)} />
+                        {this.state.equip !== '0' && <Step id="stp-3" equip={this.state.equip} onFinish={() => this.parallax.scrollTo(5)} dest={(equip) => this.getStep('2')} />}
 
                     </Parallax.Layer>
-                                        
+
                     {/*Andar 4*/}
                     <Parallax.Layer
                         offset={5} speed={0}
                         onClick={() => this.parallax.scrollTo(4)}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
-                        <Step id="stp-3" onFinish={() => this.parallax.scrollTo(6)} />
+                        {this.state.equip !== '0' && <Step id="stp-4" equip={this.state.equip} onFinish={() => this.parallax.scrollTo(6)} dest={(equip) => this.getStep('3')} />}
 
                     </Parallax.Layer>
 
@@ -198,14 +242,13 @@ export default class extends React.Component {
                         onClick={() => this.parallax.scrollTo(4)}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
-                        <Step id="stp-3" onFinish={() => this.parallax.scrollTo(7)} />
+                        {this.state.equip !== '0' && <Step id="stp-5" equip={this.state.equip} onFinish={() => this.parallax.scrollTo(7)} dest={(equip) => this.getStep('4')} />}
                     </Parallax.Layer>
 
                     {/*Andar 6*/}
                     <Parallax.Layer
                         offset={7} speed={-0}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-
                     </Parallax.Layer>
                 </Parallax>
                 {/*<Webchat />*/}
