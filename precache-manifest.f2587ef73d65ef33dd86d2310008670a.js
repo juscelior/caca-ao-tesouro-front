@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ab91181f6fb94423183a368d9aec2056",
+    "revision": "568c67a6078bafca0446be89caa81a8b",
     "url": "/caca-ao-tesouro-front/index.html"
   },
   {
-    "revision": "b624cccdb5f706d599f5",
+    "revision": "a2727cba2f09bd9fbc04",
     "url": "/caca-ao-tesouro-front/static/css/main.16dc288b.chunk.css"
   },
   {
-    "revision": "13152e32466097bbff70",
-    "url": "/caca-ao-tesouro-front/static/js/2.112dbff9.chunk.js"
+    "revision": "cadb130b2e70a4a98b90",
+    "url": "/caca-ao-tesouro-front/static/js/2.f41b93a0.chunk.js"
   },
   {
-    "revision": "b624cccdb5f706d599f5",
-    "url": "/caca-ao-tesouro-front/static/js/main.ff92bb9d.chunk.js"
+    "revision": "a2727cba2f09bd9fbc04",
+    "url": "/caca-ao-tesouro-front/static/js/main.1f5c2819.chunk.js"
   },
   {
     "revision": "de8ad418fa93336b8f77",
