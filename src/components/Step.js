@@ -3,7 +3,7 @@ import QrReader from 'react-qr-scanner'
 import ReactPlayer from 'react-player'
 
 const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
- 
+
 export default class extends React.Component {
     constructor(props){
     super(props)
@@ -52,6 +52,31 @@ export default class extends React.Component {
  
     return(
       <div className="main-content">
+                            <div className="item"
+                                style={{
+                                    whiteSpace: 'pre',
+                                    fontFamily: 'Menlo-Regular, Menlo, monospace',
+                                    fontSize: 35,
+                                    lineHeight: '55px',
+                                    color: 'white',
+                                    textAlign: 'center'
+                                }}>
+
+<h1>Instruções</h1>
+                                        <ol style={{textAlign: 'left'}}>
+                                        <li>Vá para o {this.props.dest}</li>
+                                        <li>Encontre o QR</li>
+                                        <li>Assista o vídeo até o final</li>
+<li>Descubra o próximo desafio!</li>
+
+                                        </ol>                        
+            
+                        
+
+
+                            </div>
+        
+
           {this.state.pass === 0 &&
             <div className='qr-code'>
               <QrReader
@@ -67,8 +92,8 @@ export default class extends React.Component {
           }
           
           {this.state.pass === 0 &&
-            <div className="item button-hand">
-              <button onClick={this.openImageDialog}>QR Code
+            <div className="item button-hand" style={{height:'55vh'}}>
+              <button onClick={this.openImageDialog}>Ler QR Code
                 <div className="hands"></div>
               </button>            
             </div>

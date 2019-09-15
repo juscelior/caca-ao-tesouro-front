@@ -7,6 +7,7 @@
     "botframework-webchat": "^4.5.2",
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
+    "react-coverflow": "^0.2.20",
     "react-dom": "^16.9.0",
     "react-player": "^1.12.0",
     "react-qr-scanner": "0.0.8",
