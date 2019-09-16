@@ -1,13 +1,14 @@
 import React from 'react'
 import QrReader from 'react-qr-scanner'
 import ReactPlayer from 'react-player'
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
-const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
 
 export default class extends React.Component {
   constructor(props) {
     super(props)
-   
+
     this.state = {
       delay: 100,
       result: null,
@@ -21,9 +22,9 @@ export default class extends React.Component {
 
   }
 
-  componentDidMount(){
+  componentDidMount() {
     let step = this.props.dest(this.props.equip)
-    if(step){
+    if (step) {
       let label = step.label
       let url = step.url
       let id = step.id
@@ -39,11 +40,11 @@ export default class extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.equip !== prevProps.equip) {
       let step = this.props.dest(this.props.equip)
-      if(step){
+      if (step) {
         let label = step.label
         let url = step.url
         let id = step.id
-  
+
         this.setState({
           label,
           url,
@@ -52,18 +53,36 @@ export default class extends React.Component {
       }
     }
   }
-  
 
   handleScan(data) {
 
     if (data === this.state.id) {
-
       this.setState({
         result: this.state.url,
         pass: 1
       })
     } else {
-      alert('Lugar errado! Vá para o ' + this.state.label)
+
+      confirmAlert({
+        customUI: ({ onClose }) => {
+          return (
+            <div className='custom-ui' style={{
+              whiteSpace: 'pre',
+              fontFamily: 'Menlo-Regular, Menlo, monospace',
+              color: 'white',
+              textAlign: 'center'
+            }}>
+              <h1>Lugar errado!</h1>
+              <p style={{ paddingBottom: '15px' }}>{'Vá para o ' + this.state.label + '.'}</p>
+              <div className="item button-rainbow">
+                <button onClick={onClose}>Entendi!
+                <div className="rainbow"></div>
+                </button>
+              </div>
+            </div>
+          );
+        }
+      });
     }
   }
 
@@ -97,17 +116,15 @@ export default class extends React.Component {
           style={{
             whiteSpace: 'pre',
             fontFamily: 'Menlo-Regular, Menlo, monospace',
-            fontSize: 35,
-            lineHeight: '55px',
             color: 'white',
             textAlign: 'center'
           }}>
 
           <h1>Instruções</h1>
-          <ol style={{ textAlign: 'left', width: '100%'}}>
-            <li>Vá para o {this.state.label}</li>
-            <li>Encontre o QR</li>
-            <li>Assista o vídeo até o final</li>
+          <ol style={{ textAlign: 'left', width: '100%' }}>
+            <li>Vá para o {this.state.label}.</li>
+            <li>Encontre o QR code.</li>
+            <li>Assista o vídeo até o final.</li>
             <li>Descubra o próximo desafio!</li>
           </ol>
         </div>
@@ -136,22 +153,21 @@ export default class extends React.Component {
         }
 
         {this.state.pass === 1 &&
-          <ReactPlayer
-            className='react-player'
-            url={this.state.result}
-            width='100%'
-            height='100%'
-            onEnded={this.onVideoFinish} />
-        }
+          <div className="item" >
 
-        {this.state.pass === 1 &&
-          <div className='player-wrapper'>
-            {this.state.result}
+            <ReactPlayer
+              className='react-player'
+              url={this.state.result}
+              width='100%'
+              height='100%'
+              onEnded={this.onVideoFinish}
+              config={{
+                youtube: {
+                  playerVars: { showinfo: '0', autoplay: '1', controls: '0' }
+                }
+              }}
+            />
           </div>
-        }
-
-        {this.state.pass === 2 &&
-          <p><Gray> &gt;</Gray>  Vá para o 12 andar</p>
         }
 
         {this.state.pass === 2 &&

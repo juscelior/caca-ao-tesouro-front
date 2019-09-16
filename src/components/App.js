@@ -61,6 +61,7 @@ export default class extends React.Component {
                     pages={8}
                     scrolling={false}>
 
+                    {/*Introdução*/}
                     <Parallax.Layer
                         offset={0} speed={0} factor={4}
                         style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }}
@@ -74,20 +75,26 @@ export default class extends React.Component {
                     <Parallax.Layer offset={6} speed={1} style={{ backgroundColor: '#805E73' }} />
                     <Parallax.Layer offset={7} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
-                    <Parallax.Layer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
-                        <img alt="" src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
-                    </Parallax.Layer>
-
-                    <Parallax.Layer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
+                    {/*Times*/}
+                    <Parallax.Layer offset={1} speed={0.8} style={{ opacity: 0.2 }}>
                         <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
                         <img alt="" src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
                     </Parallax.Layer>
 
-                    <Parallax.Layer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
+                    <Parallax.Layer offset={1.05} speed={0.3} style={{ pointerEvents: 'none' }}>
+                        <img alt="" src={url('compass')} style={{ width: '15%', marginLeft: '65%' }} />
+                    </Parallax.Layer>
+
+                    <Parallax.Layer offset={1.75} speed={0.5} style={{ opacity: 0.2 }}>
                         <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
                         <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
                     </Parallax.Layer>
 
+                    <Parallax.Layer offset={1.85} speed={0.3} style={{ pointerEvents: 'none' }}>
+                        <img alt="" src={url('map')} style={{ width: '15%', marginLeft: '15%' }} />
+                    </Parallax.Layer>
+
+                    {/*Andar 1*/}
                     <Parallax.Layer offset={2} speed={0.2} style={{ opacity: 0.2 }}>
                         <img alt="" src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
                         <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
@@ -99,25 +106,69 @@ export default class extends React.Component {
                         <img alt="" src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
                     </Parallax.Layer>
 
+                    {/*Andar 2*/}
+                    <Parallax.Layer offset={3} speed={0.2} style={{ opacity: 0.2 }}>
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '5%', marginLeft: '55%' }} />
+                    </Parallax.Layer>
                     <Parallax.Layer offset={3.6} speed={0.4} style={{ opacity: 0.6 }}>
                         <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
                         <img alt="" src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
                     </Parallax.Layer>
 
-                    <Parallax.Layer
-                        offset={4.5} speed={-0.4}
-                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                        <img alt="" src={url('earth')} style={{ width: '60%' }} />
+                    {/*Andar 3*/}
+                    <Parallax.Layer offset={4} speed={0.2} style={{ opacity: 0.2 }}>
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '5%', marginLeft: '55%' }} />
+                    </Parallax.Layer>
+                    <Parallax.Layer offset={4.6} speed={0.4} style={{ opacity: 0.6 }}>
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
                     </Parallax.Layer>
 
+                    {/*Andar 4*/}
+                    <Parallax.Layer offset={5} speed={0.2} style={{ opacity: 0.2 }}>
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '5%', marginLeft: '55%' }} />
+                    </Parallax.Layer>
+                    <Parallax.Layer offset={5.6} speed={0.4} style={{ opacity: 0.6 }}>
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
+                    </Parallax.Layer>
+
+                    {/*Andar 5*/}
+                    <Parallax.Layer offset={6} speed={0.2} style={{ opacity: 0.2 }}>
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '5%', marginLeft: '55%' }} />
+                    </Parallax.Layer>
+                    <Parallax.Layer offset={6.6} speed={0.4} style={{ opacity: 0.6 }}>
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
+                    </Parallax.Layer>
+
+                    {/*Final*/}
                     <Parallax.Layer
-                        offset={3} speed={-0.3}
-                        style={{
-                            backgroundSize: '80%',
-                            backgroundPosition: 'center',
-                            backgroundImage: url('clients', true)
-                        }}
-                    />
+                        offset={7.1} speed={0}
+                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
+                    </Parallax.Layer>
+                    <Parallax.Layer
+                        offset={7.2} speed={0}
+                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '34%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '67%' }} />
+                        <img alt="" src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '96%' }} />
+                    </Parallax.Layer>
+                    <Parallax.Layer
+                        offset={7.3} speed={-0.5}
+                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+                        <img alt="" src={url('goal')} style={{ width: '60%' }} />
+                    </Parallax.Layer>
 
                     {/*Introdução*/}
                     <Parallax.Layer
@@ -139,7 +190,7 @@ export default class extends React.Component {
                                     fontFamily: 'Menlo-Regular, Menlo, monospace',
                                     fontSize: 14,
                                     lineHeight: '10px',
-                                    color: 'white'
+                                    color: 'white',
                                 }}>
 
                                 <p><Gray> &gt;</Gray>  <Blue>Bem vindo intercambista!</Blue></p>
@@ -161,6 +212,7 @@ export default class extends React.Component {
                         </div>
                     </Parallax.Layer>
 
+                    {/*Times*/}
                     <Parallax.Layer
                         offset={1} speed={0}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
@@ -170,8 +222,9 @@ export default class extends React.Component {
                                 fontFamily: 'Menlo-Regular, Menlo, monospace',
                                 fontSize: 20,
                                 lineHeight: '20px',
-                                color: 'white'
-                            }}>>
+                                color: 'white',
+                                height: '50vh'
+                            }}>
                                 <Coverflow
                                     width={480}
                                     height={480}
@@ -186,21 +239,13 @@ export default class extends React.Component {
                                     <img src={url('backpack_2')} alt='Time 3' onClick={() => this.setEquip('3')} />
                                 </Coverflow>
                             </div>
-                            <div className="item button-jittery" >
+                            <div className="item button-jittery" style={{ height: '50vh' }}>
                                 {this.state.equip !== '0' && <button onClick={() => this.parallax.scrollTo(2)}>Time {this.state.equip}, começar!</button>}
                             </div>
                         </div>
                     </Parallax.Layer>
-                    {/*Percurso 1
-                        A – B – C – D – E 
 
-                        Percurso 2
-                        D – E – A – B – C 
-
-                        Percurso 3
-                        C – A – B – E – D
-                        */}
-                    {/*Times*/}
+                    {/*Andar 1*/}
                     <Parallax.Layer
                         offset={2} speed={0}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
@@ -219,7 +264,6 @@ export default class extends React.Component {
                     {/*Andar 3*/}
                     <Parallax.Layer
                         offset={4} speed={0}
-                        onClick={() => this.parallax.scrollTo(4)}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
                         {this.state.equip !== '0' && <Step id="stp-3" equip={this.state.equip} onFinish={() => this.parallax.scrollTo(5)} dest={(equip) => this.getStep('2')} />}
@@ -229,7 +273,6 @@ export default class extends React.Component {
                     {/*Andar 4*/}
                     <Parallax.Layer
                         offset={5} speed={0}
-                        onClick={() => this.parallax.scrollTo(4)}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
                         {this.state.equip !== '0' && <Step id="stp-4" equip={this.state.equip} onFinish={() => this.parallax.scrollTo(6)} dest={(equip) => this.getStep('3')} />}
@@ -239,16 +282,28 @@ export default class extends React.Component {
                     {/*Andar 5*/}
                     <Parallax.Layer
                         offset={6} speed={0}
-                        onClick={() => this.parallax.scrollTo(4)}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
                         {this.state.equip !== '0' && <Step id="stp-5" equip={this.state.equip} onFinish={() => this.parallax.scrollTo(7)} dest={(equip) => this.getStep('4')} />}
                     </Parallax.Layer>
 
-                    {/*Andar 6*/}
+                    {/*Final*/}
                     <Parallax.Layer
                         offset={7} speed={-0}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                             <div className="main-content" style={{height: '80%'}}>
+        <div className="item"
+          style={{
+            whiteSpace: 'pre',
+            fontFamily: 'Menlo-Regular, Menlo, monospace',
+            color: 'white',
+            textAlign: 'center',
+          }}>
+
+          <h1>Parabéns!</h1>
+          <h3>Volte para o início.</h3>
+        </div>
+        </div>
                     </Parallax.Layer>
                 </Parallax>
                 {/*<Webchat />*/}

@@ -552,3 +552,12 @@ button {
   .coverflow__container__1P-xE{
     background: transparent !important;
   }
+
+  .custom-ui {
+    text-align: center;
+    width: '90%';
+    padding: 40px;
+    background: #c0392b;
+    box-shadow: 0 20px 75px rgba(0, 0, 0, 0.23);
+    color: #fff;
+}
