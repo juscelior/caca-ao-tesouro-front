@@ -12,14 +12,16 @@ export default class extends React.Component {
     this.state = {
       delay: 100,
       result: null,
-      pass: 0
+      pass: 0,
+      codigo: null
     }
 
     this.handleScan = this.handleScan.bind(this)
     this.openImageDialog = this.openImageDialog.bind(this)
     this.onVideoFinish = this.onVideoFinish.bind(this)
     this.nextStep = this.nextStep.bind(this)
-
+    this.handleChange = this.handleChange.bind(this)
+    this.handleCode = this.handleCode.bind(this)
   }
 
   componentDidMount() {
@@ -54,9 +56,41 @@ export default class extends React.Component {
     }
   }
 
-  handleScan(data) {
+  handleChange(event) {
+    this.setState({codigo: event.target.value});
+  }
 
-    if (data === this.state.id) {
+  handleCode(onClose, code){
+    onClose();
+    this.handleScan(code);
+  }
+
+  handleScan(data) {
+    if(data === null){
+      confirmAlert({
+        customUI: ({ onClose }) => {
+          return (
+            <div className='custom-ui' style={{
+              whiteSpace: 'pre',
+              fontFamily: 'Menlo-Regular, Menlo, monospace',
+              color: 'white',
+              textAlign: 'center'
+            }}>
+              <h1>Digite o código aqui: </h1>
+              <p style={{ paddingBottom: '15px' }}>
+                <input type="text" name="name" value={this.state.codigo} onChange={this.handleChange} />
+              </p>
+              <div className="item button-rainbow">
+                <button onClick={() => this.handleCode(onClose, this.state.codigo)}>Pronto!
+                <div className="rainbow"></div>
+                </button>
+              </div>
+            </div>
+          );
+        }
+      });
+    }
+    else if (data === this.state.id) {
       this.setState({
         result: this.state.url,
         pass: 1
