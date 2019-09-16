@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d89ef0aea081933f13030cd435cea653",
+    "revision": "271b3b89f8a4f5678702d8b770104ff6",
     "url": "/caca-ao-tesouro-front/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/caca-ao-tesouro-front/static/css/2.627926fe.chunk.css"
   },
   {
-    "revision": "a3370b9871c1bbd9f3e0",
+    "revision": "64d44d2813cef2be5a87",
     "url": "/caca-ao-tesouro-front/static/css/main.ff67d92a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/caca-ao-tesouro-front/static/js/2.f235a95b.chunk.js"
   },
   {
-    "revision": "a3370b9871c1bbd9f3e0",
-    "url": "/caca-ao-tesouro-front/static/js/main.54154f4b.chunk.js"
+    "revision": "64d44d2813cef2be5a87",
+    "url": "/caca-ao-tesouro-front/static/js/main.63f40060.chunk.js"
   },
   {
     "revision": "de8ad418fa93336b8f77",
